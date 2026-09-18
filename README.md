@@ -1,10 +1,4 @@
-needed to put into github to create the websiteHere is all the source code from the uploaded project that you need to create the PlayHub website on GitHub.
-This is a complete Node.js + Express web proxy + games portal.
-
-Exclude node_modules, logs, screenshots, .psiphon_data, and the huge package-lock.json (run npm install instead).
-
-Recommended repo structure
-textproxy-games/
+proxy-games/
 ├── package.json
 ├── server.js
 ├── tunnel.sh                 (optional – Cloudflare tunnel helper)
@@ -24,9 +18,7 @@ textproxy-games/
         ├── 2048.html
         ├── breakout.html
         └── memory.html
-
-package.json
-JSON{
+{
   "name": "proxy-games",
   "version": "1.0.0",
   "description": "",
@@ -47,9 +39,7 @@ JSON{
     "ws": "^8.21.3"
   }
 }
-
-server.js (full proxy engine)
-JavaScriptconst express = require('express');
+const express = require('express');
 const path = require('path');
 const zlib = require('zlib');
 const compression = require('compression');
@@ -608,9 +598,7 @@ function shutdown(sig) {
 }
 process.on('SIGTERM', () => shutdown('SIGTERM'));
 process.on('SIGINT', () => shutdown('SIGINT'));
-
-tunnel.sh (optional)
-Bash#!/bin/bash
+#!/bin/bash
 # Persistent Cloudflare quick-tunnel wrapper.
 set -u
 
